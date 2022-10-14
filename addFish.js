@@ -18,22 +18,25 @@ async function main() {
 
   const Fish = mongoose.model("fish", fischSchema);
 
+
   if (!argv["c"]) {
     console.log("Nothing was saved. Please provide a category for the fish");
-    process.exit;
-  } else {
-    const newFish = Fish({
-      name: argv["n"] || "unknown name",
-      description: argv["d"] || "This is an unknown fish",
-      price: argv["p"] || 0,
-      category: argv["c"] || "unknown category",
-    });
-
-    await newFish.save();
-
-    console.log("Following Fish added");
-    console.log(newFish);
-
-    process.exit;
+    process.exit();
+    
   }
+  
+
+  const newFish = Fish({
+    name: argv["n"] || "unknown name",
+    description: argv["d"] || "This is an unknown fish",
+    price: argv["p"] || 0,
+    category: argv["c"] || "unknown category",
+  });
+
+  await newFish.save();
+
+  console.log("Following Fish added");
+  console.log(newFish);
+
+  process.exit();
 }
