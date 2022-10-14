@@ -21,7 +21,7 @@ async function main() {
   if (!argv["c"]) {
     console.log("Nothing was saved. Please provide a category for the fish");
     process.exit;
-  }
+  } else {
     const newFish = Fish({
       name: argv["n"] || "unknown name",
       description: argv["d"] || "This is an unknown fish",
