@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "minimist-lite": "^2.2.1"
+  }
+}
