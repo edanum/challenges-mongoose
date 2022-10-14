@@ -19,13 +19,15 @@ async function main() {
   const Fish = mongoose.model("fish", fischSchema);
 
   const newFish = Fish({
-    name: argv[1],
-    description: argv[2],
-    price: argv[3],
-    category: argv[4],
+    name: argv["n"],
+    description: argv["d"],
+    price: argv["p"],
+    category: argv["c"],
   });
 
   await newFish.save();
+
+  console.log("Fish added");
 
   process.exit;
 }
