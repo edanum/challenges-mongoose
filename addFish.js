@@ -18,16 +18,18 @@ async function main() {
 
   const Fish = mongoose.model("fish", fischSchema);
 
+  console.log(argv["d"]);
   const newFish = Fish({
-    name: argv["n"],
-    description: argv["d"],
-    price: argv["p"],
-    category: argv["c"],
+    name: argv["n"] || "unknown name",
+    description: argv["d"] || "This is an unknown fish",
+    price: argv["p"] || 0,
+    category: argv["c"] || "unknown category",
   });
 
   await newFish.save();
 
-  console.log("Fish added");
+  console.log("Following Fish added");
+  console.log(newFish);
 
   process.exit;
 }
